@@ -6,6 +6,10 @@ repository = "https://github.com/Zatvobor/rust-sphlib"
 license = "MIT"
 description = "Sphlib 3.0 bindings for Rust http://www.saphir2.com/sphlib"
 keywords = ["sphlib", "sha-3", "bindings", "ffi", "blake", "bmw", "cubehash", "echo", "fugue", "groestl", "hamsi", "haval", "jh", "keccak", "luffa", "md2", "md4", "md5", "panama", "radiogatun", "ripemd-160", "sha-0", "sha-2", "sha-224", "sha-384", "sha-512", "nist sha-3", "shabal", "shavite-3", "simd", "skein", "speed", "tiger", "tiger2"]
+build = "build.rs"
 
 [lib]
 name = "sphlib"
+
+[build-dependencies]
+gcc = "0.3"
