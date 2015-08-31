@@ -1,3 +1,6 @@
-#[test]
-fn it_works() {
-}
+// #![feature(cstr_memory)]
+
+extern crate libc;
+
+pub mod utils;
+pub mod sph_blake;
