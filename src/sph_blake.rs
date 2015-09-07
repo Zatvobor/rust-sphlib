@@ -73,10 +73,8 @@ extern {
 pub fn blake224(data: &str) -> [u8;28] {
     let mut dest: [u8;28] = [0;28];
     unsafe {
-        let mut cc = BlakeSmallContext::default();
-        let raw_cc = &mut cc as *mut BlakeSmallContext;
-        let void_raw_cc = raw_cc as *mut c_void;
-        // FIXME Figure out what's wrong here `let void_raw_cc = to_void_raw_small_ctx()`;
+        let mut cc      = BlakeSmallContext::default();
+        let void_raw_cc = to_void_raw_ctx(&mut cc);
         sph_blake224_init(void_raw_cc);
 
         let (void_raw_data, len) = to_void_raw_data(data);
@@ -91,10 +89,8 @@ pub fn blake224(data: &str) -> [u8;28] {
 pub fn blake256(data: &str) -> [u8;32] {
     let mut dest: [u8;32] = [0;32];
     unsafe {
-        let mut cc = BlakeSmallContext::default();
-        let raw_cc = &mut cc as *mut BlakeSmallContext;
-        let void_raw_cc = raw_cc as *mut c_void;
-        // FIXME Figure out what's wrong here `let void_raw_cc = to_void_raw_small_ctx()`;
+        let mut cc      = BlakeSmallContext::default();
+        let void_raw_cc = to_void_raw_ctx(&mut cc);
         sph_blake256_init(void_raw_cc);
 
         let (void_raw_data, len) = to_void_raw_data(data);
@@ -109,10 +105,8 @@ pub fn blake256(data: &str) -> [u8;32] {
 pub fn blake384(data: &str) -> [u8;48] {
     let mut dest: [u8;48] = [0;48];
     unsafe {
-        let mut cc = BlakeBigContext::default();
-        let raw_cc = &mut cc as *mut BlakeBigContext;
-        let void_raw_cc = raw_cc as *mut c_void;
-        // FIXME Figure out what's wrong here `let void_raw_cc = to_void_raw_small_ctx()`;
+        let mut cc      = BlakeBigContext::default();
+        let void_raw_cc = to_void_raw_ctx(&mut cc);
         sph_blake384_init(void_raw_cc);
 
         let (void_raw_data, len) = to_void_raw_data(data);
@@ -127,10 +121,8 @@ pub fn blake384(data: &str) -> [u8;48] {
 pub fn blake512(data: &str) -> [u8;64] {
     let mut dest: [u8;64] = [0;64];
     unsafe {
-        let mut cc = BlakeBigContext::default();
-        let raw_cc = &mut cc as *mut BlakeBigContext;
-        let void_raw_cc = raw_cc as *mut c_void;
-        // FIXME Figure out what's wrong here `let void_raw_cc = to_void_raw_small_ctx()`;
+        let mut cc      = BlakeBigContext::default();
+        let void_raw_cc = to_void_raw_ctx(&mut cc);
         sph_blake512_init(void_raw_cc);
 
         let (void_raw_data, len) = to_void_raw_data(data);
@@ -145,10 +137,8 @@ pub fn blake512(data: &str) -> [u8;64] {
 
 // private
 
-#[allow(dead_code)]
-fn to_void_raw_small_ctx() -> *mut c_void {
-    let mut cc = BlakeSmallContext::default();
-    let raw_cc = &mut cc as *mut BlakeSmallContext;
+fn to_void_raw_ctx<T>(cc: &mut T) -> *mut c_void {
+    let raw_cc      = cc as *mut T;
     let void_raw_cc = raw_cc as *mut c_void;
 
     return void_raw_cc;
