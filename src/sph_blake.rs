@@ -48,7 +48,6 @@ pub type sph_blake384_context = sph_blake_big_context;
 pub type sph_blake512_context = sph_blake_big_context;
 
 
-// FIXME #[link(name="sphlib", kind="static")] (Issue w/ Travis CI buiding, https://travis-ci.org/Zatvobor/rust-sphlib/jobs/78903620)
 extern {
     pub fn sph_blake224_init(cc: *mut c_void) -> ();
     pub fn sph_blake224(cc: *mut c_void, data: *const c_void, len: size_t) -> ();

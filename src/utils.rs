@@ -6,7 +6,6 @@ use std::str;
 use std::ffi::CStr;
 
 
-// FIXME #[link(name="utils", kind="static")] (Issue w/ Travis CI buiding, https://travis-ci.org/Zatvobor/rust-sphlib/jobs/78903620)
 extern {
     pub fn bin2hex(p: *const c_uchar, len: size_t) -> *mut c_char;
 }
