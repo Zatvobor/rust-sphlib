@@ -7,7 +7,6 @@ pub type sph_u32 = uint32_t;
 pub type sph_s32 = int32_t;
 
 #[repr(C)]
-#[derive(Copy)]
 #[allow(non_snake_case)]
 pub struct BlakeSmallContext {
     pub buf: [c_uchar; 64usize],
@@ -18,9 +17,6 @@ pub struct BlakeSmallContext {
     pub T1: sph_u32,
 }
 
-impl ::std::clone::Clone for BlakeSmallContext {
-    fn clone(&self) -> Self { *self }
-}
 impl ::std::default::Default for BlakeSmallContext {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
@@ -33,7 +29,6 @@ pub type sph_u64 = uint64_t;
 pub type sph_s64 = int64_t;
 
 #[repr(C)]
-#[derive(Copy)]
 #[allow(non_snake_case)]
 pub struct BlakeBigContext {
     pub buf: [c_uchar; 128usize],
@@ -44,9 +39,6 @@ pub struct BlakeBigContext {
     pub T1: sph_u64,
 }
 
-impl ::std::clone::Clone for BlakeBigContext {
-    fn clone(&self) -> Self { *self }
-}
 impl ::std::default::Default for BlakeBigContext {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
