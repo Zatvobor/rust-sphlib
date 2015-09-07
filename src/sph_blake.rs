@@ -2,6 +2,7 @@
 
 extern crate libc;
 use libc::{uint32_t, int32_t, uint64_t, int64_t, c_uchar, size_t, c_void, c_uint};
+use utils::{to_void_raw_ctx, to_void_raw_data, to_void_raw_dest};
 
 pub type sph_u32 = uint32_t;
 pub type sph_s32 = int32_t;
@@ -132,28 +133,4 @@ pub fn blake512(data: &str) -> [u8;64] {
         sph_blake512_close(void_raw_cc, void_raw_dest);
     }
     return dest;
-}
-
-
-// private
-
-fn to_void_raw_ctx<T>(cc: &mut T) -> *mut c_void {
-    let raw_cc      = cc as *mut T;
-    let void_raw_cc = raw_cc as *mut c_void;
-
-    return void_raw_cc;
-}
-
-fn to_void_raw_data(data: &str) -> (*const c_void, size_t) {
-    let void_raw_data = data.as_ptr() as *const c_void;
-    let len = data.len() as size_t;
-
-    return (void_raw_data, len);
-}
-
-fn to_void_raw_dest(dest: &mut [u8]) -> *mut c_void {
-    let raw_dest = dest.as_mut() as *mut [u8];
-    let void_raw_dest = raw_dest as *mut c_void;
-
-    return void_raw_dest;
 }
