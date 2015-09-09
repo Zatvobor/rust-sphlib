@@ -88,7 +88,7 @@ pub fn luffa224_close(cc: &mut LuffaSmallContext, dest: &mut luffa224) {
 
 pub fn luffa224_init_load_close(data: &str) -> luffa224 {
     let mut dest: luffa224 = [0;28];
-    let mut cc            = LuffaSmallContext::default();
+    let mut cc             = LuffaSmallContext::default();
 
     luffa224_init(&mut cc);
     luffa224_load(&mut cc, data);
@@ -116,7 +116,7 @@ pub fn luffa256_close(cc: &mut LuffaSmallContext, dest: &mut luffa256) {
 
 pub fn luffa256_init_load_close(data: &str) -> luffa256 {
     let mut dest: luffa256 = [0;32];
-    let mut cc            = LuffaSmallContext::default();
+    let mut cc             = LuffaSmallContext::default();
 
     luffa256_init(&mut cc);
     luffa256_load(&mut cc, data);
@@ -144,7 +144,7 @@ pub fn luffa384_close(cc: &mut LuffaMiddleContext, dest: &mut luffa384) {
 
 pub fn luffa384_init_load_close(data: &str) -> luffa384 {
     let mut dest: luffa384 = [0;48];
-    let mut cc            = LuffaMiddleContext::default();
+    let mut cc             = LuffaMiddleContext::default();
 
     luffa384_init(&mut cc);
     luffa384_load(&mut cc, data);
@@ -172,7 +172,7 @@ pub fn luffa512_close(cc: &mut LuffaBigContext, dest: &mut luffa512) {
 
 pub fn luffa512_init_load_close(data: &str) -> luffa512 {
     let mut dest: luffa512 = [0;64];
-    let mut cc            = LuffaBigContext::default();
+    let mut cc             = LuffaBigContext::default();
 
     luffa512_init(&mut cc);
     luffa512_load(&mut cc, data);
