@@ -6,3 +6,4 @@ mod sph_cubehash_test;
 mod sph_echo_test;
 mod sph_jh_test;
 mod sph_groestl_test;
+mod sph_keccak_test;
