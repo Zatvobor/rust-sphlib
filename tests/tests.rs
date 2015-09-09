@@ -10,3 +10,4 @@ mod sph_keccak_test;
 mod sph_skein_test;
 mod sph_luffa_test;
 mod sph_shavite_test;
+mod sph_simd_test;
