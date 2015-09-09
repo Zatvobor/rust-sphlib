@@ -9,3 +9,4 @@ pub mod sph_jh;
 pub mod sph_groestl;
 pub mod sph_keccak;
 pub mod sph_skein;
+pub mod sph_luffa;
