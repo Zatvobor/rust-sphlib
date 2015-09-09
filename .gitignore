@@ -1,2 +1,8 @@
 target
 Cargo.lock
+tmp
+src/c/*.o
+src/c/*.a
+src/c/sphspeed
+src/c/sphsum
+src/c/test_*
