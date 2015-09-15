@@ -13,3 +13,4 @@ pub mod sph_luffa;
 pub mod sph_shavite;
 pub mod sph_simd;
 pub mod sph_fugue;
+pub mod sph_hamsi;

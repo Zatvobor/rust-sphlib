@@ -12,3 +12,4 @@ mod sph_luffa_test;
 mod sph_shavite_test;
 mod sph_simd_test;
 mod sph_fugue_test;
+mod sph_hamsi_test;
