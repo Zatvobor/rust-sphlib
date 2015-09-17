@@ -15,3 +15,4 @@ pub mod sph_simd;
 pub mod sph_fugue;
 pub mod sph_hamsi;
 pub mod sph_whirlpool;
+pub mod sph_haval;

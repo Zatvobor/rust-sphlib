@@ -14,3 +14,4 @@ mod sph_simd_test;
 mod sph_fugue_test;
 mod sph_hamsi_test;
 mod sph_whirlpool_test;
+mod sph_haval_test;
