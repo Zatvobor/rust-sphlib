@@ -16,3 +16,4 @@ mod sph_hamsi_test;
 mod sph_whirlpool_test;
 mod sph_haval_test;
 mod sph_panama_test;
+mod sph_ripemd_test;
