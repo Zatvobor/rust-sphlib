@@ -20,3 +20,4 @@ pub mod sph_panama;
 pub mod sph_ripemd;
 pub mod sph_radiogatun;
 pub mod sph_tiger;
+pub mod sph_shabal;
