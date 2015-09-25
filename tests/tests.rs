@@ -21,3 +21,4 @@ mod sph_radiogatun_test;
 mod sph_tiger_test;
 mod sph_shabal_test;
 mod sph_md2_test;
+mod sph_md4_test;
