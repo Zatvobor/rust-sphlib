@@ -22,3 +22,4 @@ pub mod sph_radiogatun;
 pub mod sph_tiger;
 pub mod sph_shabal;
 pub mod sph_md;
+pub mod sph_sha;
